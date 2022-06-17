@@ -8,11 +8,76 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
+    <div class="container">
+      <div class="nav-bar">
+        <h1 class="home">Home</h1>
+        <ul class="nav-menu">
+          <li class="previous-recipes">Previous Recipes</li>
+          <li class="favorited-recipes">Favorited Recipes</li>
+        </ul>
+        <div class="bar-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div class="container" data-view="home">
+      <div class="row">
+        <div class="full-column">
+          <img class="home-pic" src="images/melon.PNG">
+        </div>
+      </div>
+      <form class="container">
+        <div class="row">
+          <div class="full-column">
+            <label for="search-bar">
+              <span class="search-bar-caption">Search for a fruit!</span>
+              <input type="text" id="search-bar" name="fruit-name" placeholder="Search fruits!" required>
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container hidden" data-view="fruit-info">
+      <div class="row">
+        <div class="full-column">
+          <img class="picture-layout" src="" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="full-column">
+          <h2 data-classification="name">Placeholder Fruit</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="full-column">
+          <div class="fruit-description info-layout">
+            <h3>Classifications</h3>
+            <ul>
+              <li data-classification="genus">Genus:</li>
+              <li data-classification="family">Family:</li>
+              <li data-classification="order">Order:</li>
+            </ul>
+            <h3>Nutrition</h3>
+            <ul>
+              <li data-nutrition="carbohydrates">Carbohydrates:</li>
+              <li data-nutrition="protein">Protein:</li>
+              <li data-nutrition="fat">Fat:</li>
+              <li data-nutrition="calories">Calories:</li>
+              <li data-nutrition="sugar">Sugar</li>
+            </ul>
+          </div>
+          <button>Add</button>
+        </div>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "lilita one", sans-serif;
+}
+
+body {
+  background-color: #ff8b8b;
+}
+
+header {
+  background-color: #4a658d;
+  padding: 5px;
+}
+
+li {
+  list-style: none;
+  line-height: 1.3em;
+}
+
+.home:hover,
+.previous-recipes:hover,
+.favorited-recipes:hover {
+  cursor: pointer;
+  color: #ffb7b7;
+}
+
+.nav-bar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin: auto 0;
+  width: 100%;
+  color: #ff8b8b;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 60px;
+  padding-left: 60px;
+  margin: 0;
+}
+
+.bar-menu {
+  display: none;
+  cursor: pointer;
+  float: right;
+  margin: 0 0 0 auto;
+  border: solid 1px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.home-pic {
+  width: 100%;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #ff8b8b;
+  border-radius: 3px;
+}
+
+.search-bar-caption {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 24px;
+}
+
+label {
+  width: 100%;
+}
+
+input {
+  padding-left: 5px;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline-color: #ff4f4f;
+}
+
+h2 {
+  margin: 20px 0;
+  font-size: 30px;
+}
+
+h3 {
+  margin: 5px 0;
+}
+
+ul {
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+
+.info-layout {
+  background-color: #ffd0d0;
+  border: solid 5px #ff7474;
+  border-radius: 10px;
+  height: 400px;
+  padding: 25px;
+  font-size: 22px;
+}
+
+.picture-layout {
+  background-color: #ffd0d0;
+  border: solid 5px #ff7474;
+  border-radius: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
