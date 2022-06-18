@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.full-column {
+.column {
   width: 100%;
 }
 
@@ -19,9 +19,9 @@
     max-width: 900px;
   }
 
-  .full-column {
+  .column {
     padding: 0 0.75rem;
-    width: 70%;
+    width: 60%;
   }
 }
 

@@ -8,6 +8,7 @@ var $protein = document.querySelector('[data-nutrition="protein"]');
 var $fat = document.querySelector('[data-nutrition="fat"]');
 var $calories = document.querySelector('[data-nutrition="calories"]');
 var $sugar = document.querySelector('[data-nutrition="sugar"]');
+var $pictureUrl = document.querySelector('.picture-layout');
 
 // Event listener and function for when the user enters a fruit
 $formValue.addEventListener('submit', getFruit);
@@ -25,17 +26,24 @@ function getFruit(event) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     if (xhr.status === 200) {
+      for (var i = 0; i < data.fruitImagesArray.length; i++) {
+        if (xhr.response.name.toLowerCase() === data.fruitImagesArray[i].name) {
+          $pictureUrl.src = data.fruitImagesArray[i].src;
+          $pictureUrl.alt = xhr.response.name;
+          break;
+        }
+      }
       // console.log(xhr.response);
       // console.log(xhr.status);
       $name.textContent = xhr.response.name;
       $genus.textContent = 'Genus:  ' + xhr.response.genus;
       $family.textContent = 'Family:  ' + xhr.response.family;
       $order.textContent = 'Order:  ' + xhr.response.order;
-      $carbohydrates.textContent = 'Carbohydrates:  ' + xhr.response.nutritions.carbohydrates;
-      $protein.textContent = 'Protein:  ' + xhr.response.nutritions.protein;
-      $fat.textContent = 'Fat:  ' + xhr.response.nutritions.fat;
-      $calories.textContent = 'Calories:  ' + xhr.response.nutritions.calories;
-      $sugar.textContent = 'Sugar:  ' + xhr.response.nutritions.sugar;
+      $carbohydrates.textContent = 'Carbohydrates:  ' + xhr.response.nutritions.carbohydrates + ' grams';
+      $protein.textContent = 'Protein:  ' + xhr.response.nutritions.protein + ' grams';
+      $fat.textContent = 'Fat:  ' + xhr.response.nutritions.fat + ' grams';
+      $calories.textContent = 'Calories:  ' + xhr.response.nutritions.calories + ' grams';
+      $sugar.textContent = 'Sugar:  ' + xhr.response.nutritions.sugar + ' grams';
       fruitInfoView();
     }
   });
