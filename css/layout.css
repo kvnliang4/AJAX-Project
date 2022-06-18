@@ -6,7 +6,6 @@
 
 .row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -24,21 +23,3 @@
     width: 60%;
   }
 }
-
-/* @media screen and (max-width: 768px) {
-  .bar-menu {
-    display: block;
-  }
-
-  .bar-menu.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .bar-menu.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .bar-menu.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-} */

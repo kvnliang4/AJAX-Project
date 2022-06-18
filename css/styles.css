@@ -36,14 +36,14 @@ li {
 }
 
 .nav-menu {
-  display: flex;
+  display: none;
   gap: 60px;
   padding-left: 60px;
   margin: 0;
 }
 
 .bar-menu {
-  display: none;
+  display: block;
   cursor: pointer;
   float: right;
   margin: 0 0 0 auto;
@@ -68,21 +68,43 @@ li {
 
 .search-bar-caption {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 24px;
-}
-
-label {
-  width: 100%;
 }
 
 input {
   padding-left: 5px;
   border-radius: 5px;
-  height: 30px;
+  height: 35px;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.error {
+  animation: errorshake 0.3s;
+}
+
+@keyframes errorshake {
+  0% {
+    margin-left: 10px;
+  }
+
+  25% {
+    margin-left: 30px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
+
+  75% {
+    margin-left: 30px;
+  }
+
+  100% {
+    margin-left: 10px;
+  }
 }
 
 input:focus {
@@ -90,8 +112,9 @@ input:focus {
 }
 
 h2 {
-  margin: 20px 0;
+  margin: 20px 0 10px;
   font-size: 30px;
+  text-align: center;
 }
 
 h3 {
@@ -105,7 +128,7 @@ ul {
 
 .info-layout {
   background-color: #ffd0d0;
-  border: solid 5px #ff7474;
+  border: solid 7px #ff7474;
   border-radius: 10px;
   height: 400px;
   padding: 25px;
@@ -114,7 +137,7 @@ ul {
 
 .picture-layout {
   background-color: #ffd0d0;
-  border: solid 5px #ff7474;
+  border: solid 7px #ff7474;
   border-radius: 10px;
   width: 100%;
   max-height: 400px;
@@ -128,4 +151,14 @@ ul {
 
 .active {
   display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+
+  .bar-menu {
+    display: none;
+  }
 }

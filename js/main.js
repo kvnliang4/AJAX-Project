@@ -9,6 +9,7 @@ var $fat = document.querySelector('[data-nutrition="fat"]');
 var $calories = document.querySelector('[data-nutrition="calories"]');
 var $sugar = document.querySelector('[data-nutrition="sugar"]');
 var $pictureUrl = document.querySelector('.picture-layout');
+var $searchBar = document.querySelector('#search-bar');
 
 // Event listener and function for when the user enters a fruit
 $formValue.addEventListener('submit', getFruit);
@@ -25,7 +26,18 @@ function getFruit(event) {
   xhr.setRequestHeader('token', 'abc123');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
-    if (xhr.status === 200) {
+    function resetClass() {
+      $searchBar.className = '';
+    }
+    function resetPlaceholder() {
+      $searchBar.placeholder = 'Search fruits!';
+    }
+    if (xhr.status !== 200) {
+      $searchBar.placeholder = 'Could not find fruit. Please try again!';
+      $searchBar.className = 'error';
+      setTimeout(resetClass, 1000);
+      setTimeout(resetPlaceholder, 2000);
+    } else {
       for (var i = 0; i < data.fruitImagesArray.length; i++) {
         if (xhr.response.name.toLowerCase() === data.fruitImagesArray[i].name) {
           $pictureUrl.src = data.fruitImagesArray[i].src;
@@ -33,8 +45,6 @@ function getFruit(event) {
           break;
         }
       }
-      // console.log(xhr.response);
-      // console.log(xhr.status);
       $name.textContent = xhr.response.name;
       $genus.textContent = 'Genus:  ' + xhr.response.genus;
       $family.textContent = 'Family:  ' + xhr.response.family;
